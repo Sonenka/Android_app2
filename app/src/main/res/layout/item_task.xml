@@ -6,7 +6,6 @@
     android:orientation="horizontal"
     android:padding="8dp">
 
-    <!-- Текст задачи -->
     <TextView
         android:id="@+id/textViewTask"
         android:layout_width="0dp"
@@ -16,7 +15,6 @@
         android:textSize="16sp"
         android:paddingEnd="8dp" />
 
-    <!-- Кнопка удаления -->
     <Button
         android:id="@+id/buttonDeleteTask"
         android:layout_width="wrap_content"
