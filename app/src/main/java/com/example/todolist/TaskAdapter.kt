@@ -10,10 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 class TaskAdapter(
     private val tasks: MutableList<Task>,
     private val onDeleteClick: (Task) -> Unit,
-    private val onEditClick: (Task, Int) -> Unit // Новый обработчик для редактирования
+    private val onEditClick: (Task, Int) -> Unit 
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
-    // ViewHolder для управления элементами списка
     class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textViewTask: TextView = itemView.findViewById(R.id.textViewTask)
         val buttonDeleteTask: Button = itemView.findViewById(R.id.buttonDeleteTask)
@@ -29,7 +28,6 @@ class TaskAdapter(
 
         holder.textViewTask.text = task.name
 
-        // Обработка нажатия на текст задачи для редактирования
         holder.textViewTask.setOnClickListener {
             onEditClick(task, position)
         }
@@ -41,7 +39,6 @@ class TaskAdapter(
 
     override fun getItemCount(): Int = tasks.size
 
-    // Удаление задачи
     fun removeTask(task: Task) {
         val position = tasks.indexOf(task)
         if (position != -1) {
@@ -50,7 +47,6 @@ class TaskAdapter(
         }
     }
 
-    // Добавление задачи
     fun addTask(task: Task) {
         tasks.add(task)
         notifyItemInserted(tasks.size - 1)
