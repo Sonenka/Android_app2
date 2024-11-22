@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         val buttonAddTask: Button = findViewById(R.id.buttonAddTask)
         val recyclerViewTasks: RecyclerView = findViewById(R.id.recyclerViewTasks)
 
-        // Инициализация адаптера и RecyclerView
         taskAdapter = TaskAdapter(
             tasks = mutableListOf(),
             onDeleteClick = { task ->
@@ -34,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         recyclerViewTasks.adapter = taskAdapter
         recyclerViewTasks.layoutManager = LinearLayoutManager(this)
 
-        // Событие добавления новой задачи
         buttonAddTask.setOnClickListener {
             val taskName = editTextTask.text.toString()
             if (taskName.isNotBlank()) {
